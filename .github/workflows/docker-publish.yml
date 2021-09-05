@@ -4,10 +4,10 @@ on:
   schedule:
     - cron: '19 17 * * *'
   push:
-    branches: [ master ]
+    branches: [ release ]
     tags: [ '*.*.*' ]
   pull_request:
-    branches: [ master ]
+    branches: [ release ]
 
 env:
   REGISTRY: docker.io
