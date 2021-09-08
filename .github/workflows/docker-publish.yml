@@ -4,15 +4,14 @@ on:
   schedule:
     - cron: '19 17 * * *' # Nightly builds capture upstream updates to dependency images such as node.
   push:
-    branches: [ master ]
+    branches: [ docker ]
     tags: [ '*.*.*' ]
   pull_request:
-    branches: [ master ]
+    branches: [ docker ]
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: parseplatform/parse-dashboard
-
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build:
